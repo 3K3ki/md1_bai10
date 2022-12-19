@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800px" height="500px" style="border: 1px solid"></canvas>
+</body>
+<script>
+    class Cricle {
+        width;
+        height;
+        constructor(width, height) {
+            this.height=height;
+            this.width=width;
+        }
+        setWidth(width){
+            this.width=width;
+        }
+        setHeight(height){
+            this.height=height;
+        }
+        getWidth(){return this.width;}
+        getHeight(){return this.height;}
+        getDienTich() { return this.width * this.height;}
+        getChuVi() {
+            return (this.height+ this.width) *2;
+        }
+    }
+
+    let cricle = new Cricle(100,100)
+    console.log(cricle)
+    console.log("c----->"+cricle.getWidth())
+    console.log("dien thich ---->"+cricle.getDienTich())
+    console.log("chu vi ---->"+cricle.getChuVi())
+</script>
+</html>
