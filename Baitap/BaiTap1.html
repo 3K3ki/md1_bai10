@@ -5,10 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<canvas id="myCanvas" width="800px" height="500px" style="border: 1px solid"></canvas>
+<div><input type="number" id="width">Chiều dài </div>
+ <div><input type="number" id="height">Chiều rộng</div>
+<div><button onclick="Nhap()">Tính</button></div>
+<h1 id="ket_qua"></h1>
+<div><canvas id="myCanvas" width="800px" height="500px" style="border: 1px solid"></canvas></div>
+
 </body>
 <script>
-    class Cricle {
+    class Rectangle{
         width;
         height;
         constructor(width, height) {
@@ -29,10 +34,20 @@
         }
     }
 
-    let cricle = new Cricle(100,100)
-    console.log(cricle)
-    console.log("c----->"+cricle.getWidth())
-    console.log("dien thich ---->"+cricle.getDienTich())
-    console.log("chu vi ---->"+cricle.getChuVi())
+    function Nhap() {
+        let width = +document.getElementById('width').value;
+        let height = +document.getElementById('height').value;
+        let dientich = width * height;
+        let chuvi = (width + height) * 2;
+        document.getElementById('ket_qua').innerHTML= "Dien tich la" + dientich +'<br>' + 'Chu vi la' + chuvi + '<br>';
+        let canvas = document.getElementById('myCanvas');
+        let ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.rect(50, 50, width , height);
+        ctx.stroke();
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+
 </script>
 </html>
